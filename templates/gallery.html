@@ -1,0 +1,16 @@
+<!-- templates/gallery.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <div class='gallery'>
+        {% for image in images %}
+            <div class="image-container">
+                <a href="{{ url_for('get_image', filename=image) }}" target="_blank">
+                    <img src="{{ url_for('get_thumbnail', filename=image) }}" alt="{{ image }}" loading="lazy">
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    {% if not images %}
+    <p>No images yet. <a href="{{ url_for('upload') }}">Upload some!</a></p>
+    {% endif %}
+{% endblock %}

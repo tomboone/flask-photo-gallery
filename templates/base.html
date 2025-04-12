@@ -1,0 +1,95 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <title>Flask Photo Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .image-container {
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        nav {
+            margin-bottom: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0055aa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flask Photo Gallery</h1>
+    <nav>
+        <a href='/'>Gallery</a>
+        <a href='/upload'>Upload</a>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>
