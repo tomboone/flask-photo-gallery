@@ -6,7 +6,7 @@ cffi==1.17.1
 charset-normalizer==3.4.1
 click==8.1.8
 cryptography==44.0.2
-Flask==3.1.0
+Flask==3.1.1
 idna==3.10
 isodate==0.7.2
 itsdangerous==2.2.0
